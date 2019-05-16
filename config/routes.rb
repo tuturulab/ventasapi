@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   
   resources :product
 
+  resources :product do
+    resources :detailproduct
+  end
+
 
   #account routes
   post '/auth/create', to: 'user#create'
