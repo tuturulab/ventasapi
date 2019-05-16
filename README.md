@@ -1,24 +1,8 @@
-# README
+# setup development
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-Install Postgress SQL
+-Create Database: ventas , username: postgres, password: admin 
+-Git clone and bundle install for downlaad the gem dependencies
+-Run rails db:migrate 
+-Run rails db:seed for seed main user roles
+-Run rails server
