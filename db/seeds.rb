@@ -6,6 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#Roles base setup
 
-Role.create([{ name: 'Administrator'}, {name: 'Manager'} , {name: 'Operator'} ])
+#Roles base setup
+admin = Role.create(name: "Administrator")
+Role.create([ {name: 'Manager'} , {name: 'Operator'} ])
+
+#Main account
+User.create(
+  firstName: 'the' , 
+  lastName: 'admin', 
+  email: 'tuturulab@gmail.com', 
+  password_digest: BCrypt::Password.create('password'), 
+  roles_id: admin.id
+)
+
+
+

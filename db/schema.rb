@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190516024856) do
+ActiveRecord::Schema.define(version: 20190516035312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,5 +66,4 @@ ActiveRecord::Schema.define(version: 20190516024856) do
     t.index ["roles_id"], name: "index_users_on_roles_id"
   end
 
-  add_foreign_key "users", "roles", column: "roles_id"
 end
