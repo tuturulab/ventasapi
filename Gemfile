@@ -21,9 +21,6 @@ gem 'jwt'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-# rubocop perfomance
-gem 'rubocop-performance'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
