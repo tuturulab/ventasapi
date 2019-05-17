@@ -1,4 +1,4 @@
-#Schema(brand, model, sell_price, credit_available, warranty_available, imei_available, List<DetailProduct> )
+#Schema(brand, model, sell_price, credit_available, warranty_available, imei_available, List-DetailProduct- )
 class Product < ApplicationRecord
   validates :brand, presence: true
   validates :model, presence: true
@@ -9,3 +9,6 @@ class Product < ApplicationRecord
 
   has_many :detail_products
 end
+
+
+

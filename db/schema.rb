@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190516035312) do
+ActiveRecord::Schema.define(version: 20190517034454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,11 +29,11 @@ ActiveRecord::Schema.define(version: 20190516035312) do
     t.date "original_warranty"
     t.string "imei"
     t.decimal "cost_price", precision: 10, scale: 2
-    t.bigint "products_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_sold"
-    t.index ["products_id"], name: "index_detail_products_on_products_id"
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_detail_products_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -62,8 +62,10 @@ ActiveRecord::Schema.define(version: 20190516035312) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
-    t.bigint "roles_id"
-    t.index ["roles_id"], name: "index_users_on_roles_id"
+    t.bigint "role_id"
+    t.index ["role_id"], name: "index_users_on_role_id"
   end
 
+  add_foreign_key "detail_products", "products"
+  add_foreign_key "users", "roles"
 end

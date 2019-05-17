@@ -1,6 +1,7 @@
 #Schema(description, original_warranty, imei, cost_price)
 class DetailProduct < ApplicationRecord
 
-  
-  belongs_to :products
+  validates :cost_price, presence: true
+
+  belongs_to :product
 end

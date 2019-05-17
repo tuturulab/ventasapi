@@ -4,5 +4,5 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
-  belongs_to :roles, class_name: 'Role' , foreign_key: :roles_id
+  belongs_to :role
 end

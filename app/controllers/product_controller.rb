@@ -1,13 +1,13 @@
 class ProductController < ApplicationController
   before_action :authorize_request
 
-  #GET /products
+  #GET /product
   def index
     @products = Product.all
     render json: @products, status: :ok
   end
 
-  #GET /products/{id}
+  #GET /product/{id}
   def show
     @product = Product.find_by_id(params[:id])
     if @product
@@ -17,7 +17,7 @@ class ProductController < ApplicationController
     end
   end
 
-  #POST /products
+  #POST /product
   def create 
     @product = Product.create (product_params)
     if @product.save
@@ -27,7 +27,7 @@ class ProductController < ApplicationController
     end
   end
 
-  #PUT /products/{id}
+  #PUT /product/{id}
   def update 
     @product = Product.find_by_id(params[:id])
     if @product
@@ -41,7 +41,7 @@ class ProductController < ApplicationController
     end
   end
 
-  #DELETE /products/{id}
+  #DELETE /product/{id}
   def destroy 
     @product = Product.find_by_id(params[:id])
     if @product

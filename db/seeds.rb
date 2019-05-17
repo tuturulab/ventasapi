@@ -17,7 +17,7 @@ User.create(
   lastName: 'admin', 
   email: 'tuturulab@gmail.com', 
   password_digest: BCrypt::Password.create('password'), 
-  roles_id: admin.id
+  role_id: admin.id
 )
 
 
